@@ -1,0 +1,21 @@
+#!/bin/bash 
+cd /tmp
+name=`ls -tr Fla*`
+count=`ls -tr Fla*|wc -l`
+#echo $count
+if [ $count -ne 0 ]; then
+    n=1
+    for file in $name; do
+        echo $file
+        cp $file "movie-$n.flv"
+        let n++ 
+    done
+    echo "what is the name of the movie:"
+    read dirname
+    mkdir $HOME/Desktop/$dirname
+    echo "copying file, plz wait..."
+    mv movie* $HOME/Desktop/$dirname
+    echo 'done'
+else
+    echo "no flash files, please wait..."
+fi
