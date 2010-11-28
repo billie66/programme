@@ -1,0 +1,5 @@
+#!/bin/bash
+# $1 first command line argument to the script 
+# $1..$9 comand line arguments to shell script is known as "positional
+# parameters"
+sudo apt-get install $1

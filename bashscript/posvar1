@@ -1,0 +1,8 @@
+#!/bin/bash
+# positional parameters, expr command, I/O redirection
+if [ $# -ne 2 ]; then
+    echo "Error: Number are not supplied" 1>&2
+    echo "Usage: $0 num1 num2" 1>&2
+fi
+sum=`expr $1 + $2`
+echo "sum is $sum"
