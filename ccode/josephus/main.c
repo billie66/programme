@@ -10,9 +10,7 @@ int main(int argc, const char *argv[])
    scanf("%d", &m);
    int i, a[N];
    for (i=0; i<n; i++)
-   {
        a[i]=i+1;
-   }
    printf("the sequence of people out of round:\n");
    int j=0, k=0, count=1;
    while(j<n)
