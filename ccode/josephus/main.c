@@ -3,7 +3,7 @@
  * Copyright 2010 Billie Zhang
  */
 #include <stdio.h>
-#define N 1000
+//#define N 1000
 
 int main(int argc, const char *argv[])
 {
@@ -12,11 +12,12 @@ int main(int argc, const char *argv[])
    scanf("%d", &n);
    printf("the specific number m(m>0):\n");
    scanf("%d", &m);
-   int i, a[N];
+   int i, a[n];
    for (i = 0; i < n; i++)
        a[i] = i + 1;
    printf("the sequence of people out of round:\n");
-   int j = k = 0, count = 1;
+   int j, k, count = 1;
+   j = k = 0;
    while (j < n) {
        if (a[j] != 0)
            k = k + 1;
