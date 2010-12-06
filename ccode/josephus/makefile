@@ -1,8 +1,8 @@
 CXX = gcc
 CFLAGS = -ggdb -Wall
 
-main: main.c
-	$(CXX) $(CFLAGS) -o main main.c
+lin: linkedlistversion.c
+	$(CXX) $(CFLAGS) -o lin linkedlistversion.c
 clean:
-	rm -f main
+	rm -f linkedlistversion
 
