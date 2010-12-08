@@ -23,8 +23,8 @@ int main(int argc, const char *argv[])
         p = p->next;
         printf ("\n");
     }
-    struct node *head= &a;
-    struct node *k= &a;
+    struct node *head = &a;
+    struct node *k = &a;
     p = head->next;
     while ( p != NULL ) {
         head = p;

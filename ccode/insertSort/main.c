@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int X[10], Y[10], NumInputs, NumY=0;
+int X[10], Y[10], NumInputs, NumY = 0;
 
 void getArgs(int n, char **array)
 {
     int i;
     NumInputs = n-1;
-    for(i=0; i < NumInputs; i++)
+    for(i = 0; i < NumInputs; i++)
         X[i] = atoi(array[i+1]);
 }
 
@@ -21,7 +21,7 @@ void scootOver(int j)
 void insert(int newY)
 {
     int j;
-    if (NumY==0){
+    if (NumY == 0){
         Y[0] = newY;
         return;
     }

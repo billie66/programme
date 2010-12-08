@@ -34,7 +34,7 @@ int main(int argc, const char *argv[])
     printf("Soldiers will be executed as following order: \n");
     while (1) {
         if (k % m == 0){
-            printf("%3d: %3dout", count, p->num);
+            printf("%4d:%4d out ", count, p->num);
             p1->next = p->next;
             p = p->next;
             count++;
