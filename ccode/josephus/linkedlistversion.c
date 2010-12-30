@@ -21,7 +21,7 @@ int main(int argc, const char *argv[])
     int i = 1;
     while (i < n) {
         p1->num = i;
-        p1 = malloc(sizeof(struct node *));
+        p1 = malloc(sizeof(struct node ));
         p2->next = p1;
         p2 = p1;
         i++;
