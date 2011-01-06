@@ -1,5 +1,7 @@
+/* Token concatenation using "##" preprocessor operator */
+
 #include <stdio.h>
-// Token concatenation using "##" preprocessor operator
+
 #define FRUIT(name, num)  name##_##num = num; 
 
 int main(int argc, const char *argv[])
