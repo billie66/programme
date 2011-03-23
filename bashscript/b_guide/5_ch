@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# This script is the anwser of chapter 5.
+
+TEMPONE="dd"
+TEMPTWO="ll"
+
+locate scripts | sed -n '/\.sh$/p' > $TEMPONE
+
+ls /usr/bin | sed -n '/^.a/p' > $TEMPTWO
+
+sed '1,3d' $TEMPONE > a 
+sed '1,3d' $TEMPTWO > b
