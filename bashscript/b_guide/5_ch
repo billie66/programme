@@ -2,6 +2,7 @@
 
 # This script is the anwser of chapter 5.
 
+# create two temporary files
 TEMPONE="dd"
 TEMPTWO="ll"
 
@@ -9,5 +10,27 @@ locate scripts | sed -n '/\.sh$/p' > $TEMPONE
 
 ls /usr/bin | sed -n '/^.a/p' > $TEMPTWO
 
-sed '1,3d' $TEMPONE > a 
-sed '1,3d' $TEMPTWO > b
+#delete the first three lines of a file
+
+#sed '1,3d' $TEMPONE > a
+#sed '1,3d' $TEMPTWO > b 
+
+#print lines including string "an" to stdout
+#sed -n '/an/p' $TEMPTWO 
+
+echo "this is a man function" >> $TEMPONE 
+
+STRING="*** This might have something to do with man and man pages***"
+
+#when replace text with value of variable using single quotes, 
+#the output is wrong. 
+
+#sed -n 's|man|$STRING man/p' $TEMPONE  
+
+#below two commands all are right, double quotes instead of single quotes, and
+#vertical bar substitutes slash.
+
+#sed -n "s|man|$STRING man/p" $TEMPONE 
+sed -n "s/man/$STRING man/p" $TEMPONE
+
+echo "done."
