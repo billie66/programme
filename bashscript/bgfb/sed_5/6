@@ -1,0 +1,26 @@
+#!/bin/bash 
+
+#turn on debug mode
+set -x
+
+TMPFILE="list"
+OUT="new"
+BEGIN="--This is a symlink--"
+END="<---this is a plain file"
+
+echo "You should have root privileges, and it will take a while."
+sudo find / * > $TMPFILE 
+
+for file in `cat $TMPFILE`; do
+    if [[ -h $file ]]; then
+    #add info at the beginning of line
+        echo $file | sed "s/^/$BEGIN/" >>$OUT
+    fi
+    if [[ -f $file ]]; then
+    #add info at the end of line
+        echo $file | sed "s/$/$END/" >>$OUT
+    fi
+done
+#turn off debug mode
+set +x
+echo "done."
