@@ -5,7 +5,7 @@ int main(int argc, const char *argv[])
     union date {
         int day;
         char str[sizeof(int)];
-    }ta;
+    } ta;
     
     ta.day = 1;
     if (ta.str[0] == 1) 
