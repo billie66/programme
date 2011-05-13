@@ -1,3 +1,4 @@
 # add relative path to .gitignore without prefix './'
 # not ./ccode/josephus/main
 ccode/josephus/main
+Makefile
