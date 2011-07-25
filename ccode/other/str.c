@@ -5,11 +5,16 @@ int main(int argc, const char *argv[])
 {
     char *a = "a";
     char *b = "he";
+    int n;
+    char m;
     static const char str[] = 
     "tig: \n"
     "usage: hello\n"
     "\n"
     "print: \n";
+    printf("input n, m :");
+    scanf("%d %c", &n, &m);
+    printf("the value of n is:%d, the m is:%d\n", n, m);
     printf("the str is:\n %s", str);
     printf("the len of str is: %d\n", sizeof(str));
     if (!strcasecmp(a, b))

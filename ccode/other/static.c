@@ -2,6 +2,7 @@
 
 static int sg;
 int global;
+
 int sum(int a)
 {
     static int sum = 0;
