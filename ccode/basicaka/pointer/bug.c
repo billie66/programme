@@ -3,7 +3,8 @@
 int main(int argc, const char *argv[])
 {
 /*
- * segmentation fault(only read).
+ * segmentation fault( a pieces of memory which only be read,
+ * but you write to it).
  */
 
 /* 
