@@ -10,7 +10,9 @@ int
 main(int argc, char *argv[])
 {
     int pipefd[2];
+    int pipefdd[2];
     pid_t cpid;
+    pid_t dpid;
     char buf;
     int a;
 
@@ -46,7 +48,36 @@ main(int argc, char *argv[])
         write(pipefd[1], argv[1], strlen(argv[1]));
         close(pipefd[1]);          /* Reader will see EOF */
         wait(NULL);                /* Wait for child */
-        exit(EXIT_SUCCESS);
-    }
-}
+
+        if (pipe(pipefdd) == -1) {
+            perror("pipe");
+            exit(EXIT_FAILURE);
+        }
+        dpid = fork();
+        fprintf(stdout, "dpid: %d \n", dpid);
+
+        if (dpid == -1) {
+            perror("fork");
+            exit(EXIT_FAILURE);
+        }
+
+        if (dpid == 0) {
+            close(pipefdd[1]);          /* Close unused write end */
+
+            while (read(pipefdd[0], &buf, 1) > 0)
+                write(STDOUT_FILENO, &buf, 1);
+
+            write(STDOUT_FILENO, "\n", 1);
+            close(pipefdd[0]);
+            _exit(EXIT_SUCCESS);
+
+        } else {
+            close(pipefdd[0]);          /* Close unused read end */
+            write(pipefdd[1], argv[1], strlen(argv[1]));
+            close(pipefdd[1]);          /* Reader will see EOF */
+            wait(NULL);                /* Wait for child */
+            exit(EXIT_SUCCESS);
+        }
+   }
+}    
 

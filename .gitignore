@@ -2,3 +2,4 @@
 # not ./ccode/josephus/main
 ccode/josephus/main
 Makefile
+a.out
