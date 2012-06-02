@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Divide a long single line to multiple lines, a closing
+# curly brace as delimiter, for the convenience of reading
+# css files containing just one line.
+
+read -p "Enter the input file name -> " infile
+
+if [ -s $infile ]; then 
+    echo "$infile is not a empty file."
+else
+    echo "$infile doesn't exist."
+    exit
+fi
+
+read -p "Enter the outfile file name -> " outfile
+
+if [ -e $outfile ]; then 
+    if [ -s $outfile ]; then
+        echo > $outfile
+    fi
+else
+    touch $outfile
+fi
+
+echo "It is in the process of grouping data, please waiting..."
+
+while read -d '}' block; do 
+    echo "$block}" >> $outfile
+    echo >> $outfile
+done < $infile
+
+read -p "Do you want to delete $infile, yes or no?" answer
+
+# It must have a space between square bracket and string expression.
+if [[ $answer == yes ]]; then
+    rm $infile
+else
+    exit
+fi

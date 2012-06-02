@@ -1,8 +1,11 @@
 #!/bin/bash
+
 # positional parameters, expr command, I/O redirection
+
+out=`expr $1 \* $2`
+echo "The result is $out"
+
 if [ $# -ne 2 ]; then
     echo "Error: Number are not supplied" 1>&2
     echo "Usage: $0 num1 num2" 1>&2
 fi
-out=`expr $1 \* $2`
-echo "The result is $out"
