@@ -32,7 +32,8 @@ done < $infile
 
 read -p "Do you want to delete $infile, yes or no?" answer
 
-# It must have a space between square bracket and string expression.
+# It must at least have a space between square bracket 
+# and string expression.
 if [[ $answer == yes ]]; then
     rm $infile
 else
