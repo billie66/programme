@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# use a here document with two methods.
+
+# This one use "<<" operator, so the second EOF token 
+# must appear at the beginnig of the line, and no trailing spaces. 
+
+cat << EOF
+    hello world!
+EOF
+
+# The code sinppet below has a "<<-" operator, which can suppress the leading
+# tab characters, not space characters. Thus, if you write script in vim that
+# has "set expandtab" in its .vimrc, so you have to type "ctrl-v-tab" in 
+# insert mode of vim to write a tab character.
+ 
+cat <<- EOF
+	hello world again!
+	EOF
+
+		
