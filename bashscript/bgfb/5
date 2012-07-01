@@ -27,7 +27,7 @@ STRING="*** This might have something to do with man and man pages***"
 
 #sed -n 's|man|$STRING man/p' $TEMPONE  
 
-#below two commands all are right, double quotes instead of single quotes, and
+#two commands below both are right, double quotes instead of single quotes, and
 #vertical bar substitutes slash.
 
 #sed -n "s|man|$STRING man/p" $TEMPONE 
