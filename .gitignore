@@ -3,3 +3,4 @@
 ccode/josephus/main
 Makefile
 a.out
+*.swp

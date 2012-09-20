@@ -1,0 +1,8 @@
+#!/bin/bash
+
+FILE=`awk -F\| '{print $1}' <dd`
+
+for i in $FILE; do
+    cp $i ~/tech/$i 
+done
+    

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+cd ~/TLCL/book
+
+for file in $(`ls *.md`); do
+    case $file in 
+        chap0[1-9]
+    esac
+
+    echo "[previous](chap) | [content](index.html) | [next](chap)" >>$file
+done
+
+    
+
