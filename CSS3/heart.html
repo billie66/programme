@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.heart {
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: 80px;
+  left: 40px;
+  border-top: 28px solid #F76464;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: Arial;
+}
+.heart::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: -52px;
+  width: 32px;
+  height: 32px;
+  background: #F76464;
+  border-radius: 50%;
+  border-bottom-right-radius: 0;
+}
+.heart::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: -52px;
+  width: 32px;
+  height: 32px;
+  background: #F76464;
+  border-radius: 50%;
+  border-bottom-left-radius: 0;
+}
+</style>
+</head>
+<body>
+<p class="heart">The :before</p>
+</body>
+</html>

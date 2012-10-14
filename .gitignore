@@ -1,6 +1,6 @@
-# add relative path to .gitignore without prefix './'
+# add relative pathname without prefix './'
 # not ./ccode/josephus/main
 ccode/josephus/main
-Makefile
+
 a.out
 *.swp
